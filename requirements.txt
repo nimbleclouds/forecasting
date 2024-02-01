@@ -5,5 +5,5 @@ numpy==1.24.4
 datetime
 plotly
 plotly.express
-scikit-learn
+scikit-learn==1.2.2
 xgboost
