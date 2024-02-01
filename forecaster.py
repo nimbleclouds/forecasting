@@ -1,10 +1,8 @@
 import streamlit as st
-import gdown
-import pyodbc
 import numpy as np
 import pickle
 import pandas as pd
-from pathlib import Path
+#from pathlib import Path
 import datetime as dt
 import plotly.express as px
 from datetime import date
