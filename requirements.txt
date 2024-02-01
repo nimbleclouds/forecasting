@@ -1,7 +1,6 @@
 streamlit
 pandas
 numpy
-pickle
 datetime
 plotly
 plotly.express
