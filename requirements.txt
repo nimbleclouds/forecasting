@@ -6,4 +6,4 @@ datetime
 plotly
 plotly.express
 scikit-learn==1.2.2
-xgboost
+xgboost==2.0.3
