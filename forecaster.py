@@ -12,6 +12,9 @@ from sklearn.metrics import mean_absolute_percentage_error
 from sklearn.metrics import r2_score
 from sklearn.metrics import mean_squared_error
 import xgboost as xgb
+import joblib
+
+
 st.set_page_config(layout="wide")
 st.markdown("""# Nomin United Hypermarket - 10/13/2023""")
 st.markdown("""Энэхүү суурь загвар нь Номин Юнайтед ХМ-ын SKU-үүд дээр суурилсан ба :blue["2022-01-01"]-ээс :blue["2023-09-01"] хүртэлх борлуулалт дээр сургагдсан. 
@@ -45,8 +48,10 @@ X_valid = data[(data['date'] >= '2023-09-01')].drop(columns=['date','quantity','
 y_valid = data[(data['date'] >= '2023-09-01')]['quantity']
 X_valid_ik = data[(data['date'] >= '2023-09-01')]['itemkey'].astype('str')
 y_valid_date = data[(data['date'] >= '2023-09-01')]['date']
-with open("simple_rfr_model.pkl", 'rb') as pickle_file:
-    model = pickle.load(pickle_file)
+#with open("simple_rfr_model.pkl", 'rb') as pickle_file:
+#    model = pickle.load(pickle_file)
+with open("simple_rfr_model.pkl", 'rb') as model_file:
+    model = joblib.load(model_file)
 test_predictions = model.predict(X_test)
 val_predictions = model.predict(X_valid)
 X_t = X_test.copy()
